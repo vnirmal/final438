@@ -1,38 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+
 .App {
   text-align: center;
+  font-family: 'Ubuntu' , sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.main-content {
+  background-color: rgba(228, 199, 199, 0.781);
+  height: 70vh;
+  width: 100%;
+  font-size: 2rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.stats {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(206, 233, 233, 0.74);
+  padding-left: 2rem;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list-section {
+  width: 40%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  padding-left: 2rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color:rgba(233, 194, 233, 0.753);
 }
 
-.App-link {
-  color: #61dafb;
+.list-header {
+  font-size: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.to-do-list {
+  width: 100%;
+  font-size: .6rem;
+
+}
+
+.bottom-panel {
+  background-color: rgb(43, 68, 255, .15);
+  height: 30vh;
+  width: 100%;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Ubuntu' , sans-serif;
+}
+
+.weather {
+  color: rgb(80, 80, 80);
+  font-size: 2rem;
+  padding-left: 2rem;
 }
