@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import './media.css';
 import { LinearProgress } from '@material-ui/core/';
-import ToDoList from './to_do_list';
+import TaskList from './TaskList';
 import timeWeather from './time_weather';
 import Clock from 'react-live-clock';
 
@@ -19,7 +19,7 @@ function App() {
             Here's what you want to get done today:
           </div>
           <div className="to-do-list">
-          <ToDoList/>
+          <TaskList/>
           </div>
         </div>
       </header>
@@ -27,7 +27,7 @@ function App() {
         <div className="weather">
           the time right now is:   
         </div>
-          <Clock />
+          <Clock className="time"/>
       </body>
     </div>
   );

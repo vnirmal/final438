@@ -1,0 +1,11 @@
+.TaskItem {
+  display: block;
+}
+
+.TaskItem button {
+  display: none;
+}
+
+.TaskItem:hover button {
+  display: inline-block;
+}
