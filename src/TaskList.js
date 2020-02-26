@@ -12,6 +12,7 @@ export default function TaskList(props) {
     localStorage.setItem("tasks", JSON.stringify(state.tasks));
   });
 
+
   const setName = i => name => {
     const tasks = [...state.tasks];
     tasks[i].label = name;
@@ -29,7 +30,7 @@ export default function TaskList(props) {
   const newTask = () => {
     const tasks = [...state.tasks];
     tasks.push({
-      label: "New task",
+      label: "",
       done: false
     });
     setState({ tasks });
@@ -42,7 +43,7 @@ export default function TaskList(props) {
   };
 
   return (
-    <div className="TaskList">
+    <div className="task-list">
       {state.tasks.map((item, i) => (
         <TaskItem
           key={i}

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:700&display=swap');
 
 .App {
   text-align: center;
-  font-family: 'Ubuntu' , sans-serif;
+  font-family: 'Ubuntu';
   width: 100vw;
   height: 100vh;
 }
@@ -19,12 +19,29 @@
 }
 
 .stats {
-  width: 60%;
+  width: 50%;
   height: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   background-color: white;
+  padding-left: 4rem;
 
+}
+
+.stats-title {
+  color: rgb(0, 0, 0, .9)
+}
+
+.tasks-done {
+  font-size: 10rem;
+  color:rgb(0, 0, 0, .3);
+}
+
+.taskstext {
+  color: rgb(0, 0, 0, .3);
+  font-size: 2rem;
 }
 
 .list-section {
@@ -53,29 +70,32 @@
 }
  
 .bottom-panel {
-  background-color: rgb(43, 68, 255, .15);
+  background-color: rgb(43, 68, 255, .08);
   height: 30vh;
-  font-size: 3rem;
   width: 100vw;
   font-weight: bold;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-start;
   font-family: 'Ubuntu' , sans-serif;
 }
 
-.weather {
-  color: rgb(80, 80, 80);
+.bottom-text {
+  color: rgb(0, 0, 0, .6);
   font-size: 2rem;
-  padding: 4rem;
+  padding: 2.5rem 0rem 0rem 4rem;
 }
 
 .time {
-  font-size: 4rem;
-  padding: 4rem 15rem;
+  font-size: 2.3rem;
+  padding: .5rem;
+  color: rgb(0, 0, 0, .3);
 }
 
 .task-list {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-content: center;
 }

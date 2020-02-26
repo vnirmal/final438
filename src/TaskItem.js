@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { Checkbox, TextField, IconButton } from "@material-ui/core";
-import { Delete } from "@material-ui/icons";
+import { Clear } from "@material-ui/icons";
 
 export default function TaskItem(props) {
   const input = React.createRef();
@@ -17,12 +17,14 @@ export default function TaskItem(props) {
         checked={props.done}
       />
       <TextField
+        id="standard-basic"
         onChange={evt => props.setName(evt.target.value)}
         value={props.name}
+        placeholder="task"
         ref={input}
       />
       <IconButton onClick={props.remove} aria-label="delete">
-        <Delete/>
+        <Clear/>
       </IconButton>
     </div>
   );

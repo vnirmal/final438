@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import './App.css';
 import './media.css';
-import Clock from 'react-live-clock';
+// import Clock from 'react-live-clock';
 
 
 function timeWeather(){
