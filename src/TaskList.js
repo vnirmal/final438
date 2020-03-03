@@ -4,14 +4,14 @@ import "./App.css";
 import { Button } from "@material-ui/core";
 
 export default function TaskList(props) {
+  
   const [state, setState] = useState({
-    tasks: JSON.parse(localStorage.getItem("tasks") || "[]")
+    tasks: JSON.parse(localStorage.getItem("tasks") || "[]"),
   });
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(state.tasks));
   });
-
 
   const setName = i => name => {
     const tasks = [...state.tasks];

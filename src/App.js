@@ -1,21 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import Lottie from 'react-lottie';
+import UncontrolledLottie from './components/lottie.js'
 import './App.css';
 import './media.css';
 import TaskList from './TaskList';
-// import timeWeather from './time_weather';
 import Clock from 'react-live-clock';
 
 
 function App() {
+
   return (
     <div className="App">
       <header className="main-content">
         <div className="stats">
           <div className="stats-title">
             today's stats
+            <UncontrolledLottie/>
           </div>
           <div className="tasks-done">
-          3
+           
           </div>
           <div classname="taskstext">
             tasks done this week
