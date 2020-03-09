@@ -1,16 +1,18 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./App.css";
 import { Checkbox, TextField, IconButton } from "@material-ui/core";
 import { Clear } from "@material-ui/icons";
 
-export default function TaskItem(props) {
-  const input = React.createRef();
+const TaskItem = React.forwardRef((props, ref) => {
+  function checkKey(evt) {
+    if (evt.key === "Enter") {
+      props.createNew();
+    } else if (evt.key === "Backspace" && !props.name){
+      props.remove();
+    }
+  }
 
-  useEffect($ => {
-    // input.current.focus();
-  });
-
-  return (
+return (
     <div className="TaskItem">
       <Checkbox
         onChange={evt => props.setDone(evt.target.checked)}
@@ -19,13 +21,16 @@ export default function TaskItem(props) {
       <TextField
         id="standard-basic"
         onChange={evt => props.setName(evt.target.value)}
+        onKeyDown={checkKey}
         value={props.name}
         placeholder="task"
-        ref={input}
+        ref={ref}
       />
       <IconButton onClick={props.remove} aria-label="delete">
         <Clear/>
       </IconButton>
     </div>
-  );
-}
+  )
+})
+
+export default TaskItem;

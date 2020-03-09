@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Lottie from 'react-lottie';
+import React, { useEffect, useState } from 'react';
 import UncontrolledLottie from './components/lottie.js'
 import './App.css';
 import './media.css';
@@ -8,6 +7,13 @@ import Clock from 'react-live-clock';
 
 
 function App() {
+  const [complete, setComplete] = useState(
+    JSON.parse(localStorage.getItem("complete") || "0")
+  );
+
+  useEffect(() => {
+    localStorage.setItem("complete", JSON.stringify(complete))
+  })
 
   return (
     <div className="App">

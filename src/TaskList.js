@@ -1,50 +1,59 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import TaskItem from "./TaskItem";
 import "./App.css";
 import { Button } from "@material-ui/core";
 
 export default function TaskList(props) {
-  
-  const [state, setState] = useState({
-    tasks: JSON.parse(localStorage.getItem("tasks") || "[]"),
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks") || "[]")
+  );
+
+  const focusedRef = useRef();
+  const [focus, setFocus] = useState(-1);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   });
 
   useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(state.tasks));
-  });
+    if (focus !== -1) {
+      focusedRef.current.querySelector("input[type=text]").focus();
+    }
+  }, [focus, focusedRef]);
+
 
   const setName = i => name => {
-    const tasks = [...state.tasks];
-    tasks[i].label = name;
-    setState({
-      tasks: tasks
-    });
+    const newTasks = [...tasks];
+    newTasks[i].label = name;
+    setTasks(newTasks);
   };
 
   const setDone = i => done => {
-    const tasks = [...state.tasks];
-    tasks[i].done = done;
-    setState({ tasks });
+    const newTasks = [...tasks];
+    newTasks[i].done = done;
+    setTasks(newTasks);
   };
 
   const newTask = () => {
-    const tasks = [...state.tasks];
-    tasks.push({
+    const newTasks = [...tasks];
+    newTasks.push({
       label: "",
       done: false
     });
-    setState({ tasks });
+    setTasks(newTasks);
+    setFocus(newTasks.length - 1);
   };
 
   const removeTask = i => () => {
-    const tasks = [...state.tasks];
-    tasks.splice(i, 1);
-    setState({ tasks });
+    const newTasks = [...tasks];
+    newTasks.splice(i, 1);
+    setTasks(newTasks);
+    setFocus(i - 1);
   };
 
   return (
     <div className="task-list">
-      {state.tasks.map((item, i) => (
+      {tasks.map((item, i) => (
         <TaskItem
           key={i}
           name={item.label}
@@ -52,12 +61,13 @@ export default function TaskList(props) {
           setName={setName(i)}
           setDone={setDone(i)}
           remove={removeTask(i)}
+          createNew={newTask}
+          ref={i === focus ? focusedRef : null}
         />
       ))}
       <Button onClick={newTask}>Add</Button>
+      <p> You have {tasks.filter(task=> !task.done).length} items to go! </p>
     </div>
   );
 }
 
-// [{"name", true}, {"name", false}]
-// [<TaskItem .../>, <TaskItem .../>]
