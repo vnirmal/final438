@@ -54,7 +54,7 @@
 
 .list-header {
   height: 40%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   align-items: flex-end;
   display:flex;
 }
@@ -62,7 +62,7 @@
 .to-do-list {
   width: 100%;
   height:60%;
-  font-size: .6rem;
+  font-size: .8rem;
   align-content: flex-start;
   display: flex;
   padding-top: 4rem;
@@ -71,7 +71,7 @@
 }
  
 .bottom-panel {
-  background-color: rgb(43, 68, 255, .08);
+  /* background-color: rgb(43, 68, 255, .08); */
   height: 30vh;
   width: 100vw;
   font-weight: bold;
@@ -80,8 +80,18 @@
   align-content: center;
   align-items: flex-start;
   font-family: 'Ubuntu' , sans-serif;
+  animation-name: panelanim;
+  animation-duration: 200s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
 }
 
+@keyframes panelanim {
+  0%   {background-color: rgb(176, 185, 255);}
+  25%  {background-color: rgb(177, 214, 177);}
+  50%  {background-color: rgb(240, 208, 122);}
+  100% {background-color: rgb(152, 135, 158);}
+}
 .bottom-text {
   color: rgb(0, 0, 0, .6);
   font-size: 2rem;
