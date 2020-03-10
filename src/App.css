@@ -66,6 +66,7 @@
   align-content: flex-start;
   display: flex;
   padding-top: 4rem;
+  overflow:scroll;
 
 }
  
@@ -98,4 +99,5 @@
   display: flex;
   flex-direction: column;
   align-content: center;
+  overflow: scroll;
 }

@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import Lottie from 'react-lottie'
-import animationData from '../lotties/2797-welcome.json'
+import animationData from '../lotties/17003-control-animated-volume-1.json'
 
 class UncontrolledLottie extends Component {
+
   render(){
     const defaultOptions = {
       loop: true,

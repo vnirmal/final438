@@ -3,7 +3,7 @@ import TaskItem from "./TaskItem";
 import "./App.css";
 import { Button } from "@material-ui/core";
 
-export default function TaskList(props) {
+function TaskList() {
   const [tasks, setTasks] = useState(
     JSON.parse(localStorage.getItem("tasks") || "[]")
   );
@@ -71,3 +71,4 @@ export default function TaskList(props) {
   );
 }
 
+export default TaskList;

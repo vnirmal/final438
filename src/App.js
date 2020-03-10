@@ -7,28 +7,19 @@ import Clock from 'react-live-clock';
 
 
 function App() {
-  const [complete, setComplete] = useState(
-    JSON.parse(localStorage.getItem("complete") || "0")
-  );
-
-  useEffect(() => {
-    localStorage.setItem("complete", JSON.stringify(complete))
-  })
-
+  
   return (
     <div className="App">
       <header className="main-content">
         <div className="stats">
           <div className="stats-title">
-            today's stats
             <UncontrolledLottie/>
           </div>
-          <div className="tasks-done">
+          {/* <div className="tasks-done">
            
           </div>
           <div classname="taskstext">
-            tasks done this week
-          </div>
+          </div> */}
         </div>
 
         <div className="list-section">
