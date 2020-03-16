@@ -1,15 +1,53 @@
 html {
-    font-size: 10px;
+    font-size: 12px;
+
+    
 }
+
+.main-content {
+    flex-direction: column;
+    align-items: center;
+    overflow: scroll;
+}
+
+.stats {
+    width: 70%;
+}
+
+.list-section {
+    width: 80%;
+}
+
+
 
 @media only screen and (min-width: 600px) {
     html {
         font-size: 14px;
     }
+
+    .main-content {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .task-list {
+        overflow: scroll;
+    }
+    
 }
 
 @media only screen and (min-width: 768px) {
     html {
         font-size: 16px;
     }
+
+    .main-content {
+        align-items: center;
+        flex-direction: row;
+    }
+
+    .task-list {
+        overflow: scroll;
+    }
+    
 }

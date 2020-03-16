@@ -33,7 +33,7 @@ function App() {
       </header>
       <div className="bottom-panel">
         <div className="bottom-text">
-          hi there, the time right now is: <Clock format="hh:mm:ss A" className="time"/>
+        hi there, the time right now is: <Clock format="hh:mm:ss A" className="time"/>
         </div>
         <div className="bottom-text">
           today, it is <Clock format="MMMM Do, YYYY" className='time'/>
